@@ -1,30 +1,39 @@
-import funciones
+import functions
 
-# mainloop
-while True:
+if __name__ == "__main__":
+    while True:
 
-    # menu
-    print("\n*** TASKER ***\n")
-    print("1. Add task")
-    print("2. View tasks")
-    print("3. Mark task as completed")
-    print("4. Remove task")
-    print("5. Exit")
+        # menu
+        print("\n--- TASKER CLI ---\n")
+        print("1. Add task")
+        print("2. View tasks")
+        print("3. Mark task as completed")
+        print("4. Remove task")
+        print("5. Exit")
 
-    #input
-    option = int(input("\n> Choose an option: \n"))
-
-    match option:
-        case 1:
-            funciones.add_task()
-        case 2:
-            funciones.view_tasks()
-        case 3:
-            funciones.mark_as_completed()
-        case 4:
-            funciones.remove_task()
-        case 5:
-            print("\n*** GOOD BYE ***\n")
-            break
-        case _:
+        # input
+        try:
+            option = int(input("\n> Choose an option: \n"))
+        except ValueError:
             print("\n*** INVALID OPTION ***\n")
+            continue
+
+        match option:
+            case 1:
+                functions.add_task(functions.todo_tasks)
+
+            case 2:
+                functions.view_tasks(functions.todo_tasks)
+
+            case 3:
+                functions.mark_as_completed(functions.todo_tasks)
+
+            case 4:
+                functions.remove_task(functions.todo_tasks)
+
+            case 5:
+                print("\n*** EXITING ***\n")
+                break
+
+            case _:
+                print("\n*** INVALID OPTION ***\n")
