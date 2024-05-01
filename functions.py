@@ -1,55 +1,53 @@
-todo_tasks = []
+todo_tasks: list = []
 
 
 def add_task(todo_list: list):
-    # Entrada para la tarea
-    todo_task = input("\n> Enter task: ")
-
-    # Añadir la tarea al final de la lista
+    todo_task = input("> Enter task:")
     todo_list.append(todo_task)
 
-    # Informe de tarea añadida
-    print("\n*** TASK ADDED ***\n")
-    print(f"{todo_task} [{len(todo_list)}]\n")
+    print("*** TASK ADDED ***", end="\n")
+    print(f"{todo_task} [{len(todo_list)}]", end="\n\n")
 
 
 def view_tasks(todo_list: list):
-    #ver lista de tareas
     if len(todo_list) == 0:
-        print("\n*** NO TASKS ADDED ***\n")
+        print("\n*** NO TASKS ADDED ***", end="\n\n")
+
     if len(todo_list) > 0:
-        print("\n*** TASKS ***\n")
+        print("+++ TASKS SAVED +++", end="\n")
         for task in todo_list:
-            print(f"{task} [{todo_list.index(task) + 1}]")
-        print("\n")
+            print(f"[{todo_list.index(task) + 1}] {task}", end="\n")
+        print("+++++++ END +++++++", end="\n\n")
 
 
-def mark_as_completed(todo_list: list):
+def mark_task(todo_list: list):
     if len(todo_list) == 0:
-        print("\n*** NO TASKS ADDED ***\n")
+        print("\n*** NO TASKS ADDED ***", end="\n")
+
     if len(todo_list) > 0:
-        print("\n*** TASKS ***\n")
+        print("+++ TASKS +++", end="\n")
         for task in todo_list:
-            print(f"{task} [{todo_list.index(task) + 1}]")
+            print(f"[{todo_list.index(task) + 1}] {task}", end="\n")
         print("\n")
         try:
             task_to_complete = int(
-                input("\n> Choose a task to mark as completed: \n"))
+                input("> Choose a task to mark as completed:", end="\n"))
         except ValueError:
-            print("\n*** INVALID OPTION ***\n")
+            print("\n*** INVALID OPTION ***", end="\n")
             return
 
 
 def remove_task(todo_list: list):
     if len(todo_list) == 0:
-        print("\n*** NO TASKS ADDED ***\n")
+        print("\n*** NO TASKS ADDED ***", end="\n")
+
     if len(todo_list) > 0:
-        print("\n*** TASKS ***\n")
+        print("+++ TASKS +++", end="\n")
         for task in todo_list:
-            print(f"{task} [{todo_list.index(task) + 1}]")
-        print("\n")
+            print(f"[{todo_list.index(task) + 1}] {task}", end="\n")
+
         try:
-            task_to_remove = int(input("\n> Choose a task to remove: \n"))
+            task_to_remove = int(input("> Choose a task to remove:", end="\n"))
         except ValueError:
-            print("\n*** INVALID OPTION ***\n")
+            print("\n*** INVALID OPTION ***", end="\n")
             return

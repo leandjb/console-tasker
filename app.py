@@ -4,18 +4,19 @@ if __name__ == "__main__":
     while True:
 
         # menu
-        print("\n--- TASKER CLI ---\n")
+        print("---- TASKER CLI ----", end="\n", flush=True)
         print("1. Add task")
         print("2. View tasks")
-        print("3. Mark task as completed")
+        print("3. Mark task")
         print("4. Remove task")
         print("5. Exit")
+        print("--------------------")
 
         # input
         try:
-            option = int(input("\n> Choose an option: \n"))
+            option = int(input("> Choose an option:"))
         except ValueError:
-            print("\n*** INVALID OPTION ***\n")
+            print("\n*** INVALID OPTION ***", end="\n")
             continue
 
         match option:
@@ -26,14 +27,14 @@ if __name__ == "__main__":
                 functions.view_tasks(functions.todo_tasks)
 
             case 3:
-                functions.mark_as_completed(functions.todo_tasks)
+                functions.mark_task(functions.todo_tasks)
 
             case 4:
                 functions.remove_task(functions.todo_tasks)
 
             case 5:
-                print("\n*** EXITING ***\n")
+                print("*** EXITING ***", end="\n")
                 break
 
             case _:
-                print("\n*** INVALID OPTION ***\n")
+                print("*** INVALID OPTION ***", end="\n")
