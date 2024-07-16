@@ -1,3 +1,17 @@
 # console-tasker
-Project about task manager that allows to add, list, and mark tasks as completed from the console using Python. You can customize it and add more features according to your needs
- 
+
+Proyecto sobre un gestor de tareas que permite agregar, listar y marcar tareas
+como completadas desde la consola utilizando Python. Puedes personalizarlo y
+agregar más funcionalidades según tus necesidades.
+
+## Funciones:
+
+- `agregar_tarea()`: Agrega una nueva tarea a la lista de
+  tareas.
+- `listar_tareas()`: Lista todas las tareas.
+- `marcar_completada()`: Marca una tarea como completada.
+
+## Ejemplo de uso:
+```commandline
+python app.py
+```
